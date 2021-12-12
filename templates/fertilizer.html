@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta Tag-->
+        <meta charser="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS-->
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"  rel= "stylesheet"text='text/css'/>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+        
+        <!-- Title Tag-->
+        <title>Crop Recommendation</title>
+
+        <!--City-->
+        <script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+    </head>
+    <body>
+
+        <!--Header-->
+        <header>
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark  ">
+              <div class="container">
+                  <a href="{{ url_for('home') }}" class="nav-brand">Agro-Intelligent</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar"aria-controls="myNavBar" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="myNavBar">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item">
+                              <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                          </li>
+                          <li class ="nav-item">
+                            <a href="{{ url_for('crop_recommend') }}" class="nav-link">Crop Recommender</a>
+                        </li>
+                          <li class="nav-item active">
+                            <a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer Advisor</a>
+                          </li>
+                          <li class="nav-item ">
+                            <a href="{{url_for('crop_yield')}}" class="nav-link">Yield Predictor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{url_for('about')}}" class="nav-link">About</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+      </header>
+        <section class=sec>
+        <form method="POST" action="{{ url_for('fert_recommend') }}">
+          <div class="form-group row">
+            <label for="Nitrogen" class="col-sm-3 col-form-label">Nitrogen</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" id="Nitrogen" name="nitrogen" placeholder="Example:60" required/>
+            </div>
+          </div>
+            <div class="form-group row">
+              <label for="Phosphorous" class="col-sm-3 col-form-label">Phosphorous</label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" id="Phosphorous" name="phosphorous" placeholder="Example:35" required/>
+            </div>
+            </div>
+            <div class="form-group row">
+              <label for="Pottasium" class="col-sm-3 col-form-label">Pottasium</label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" id="Pottasium" name="pottasium" placeholder="Example:40" required/>
+            </div>
+            </div>
+            <div class="form-group row">
+              <label for="crop" class="col-sm-3 col-form-label">Crop</label>
+              <div class="col-sm-9">
+                <select
+                name="cropname"
+                class="form-control"
+                id="crop"
+                placeholder="Select a crop"
+                required
+              >
+                <option selected>Select crop</option>
+                <option>rice</option>
+                <option>maize</option>
+                <option>chickpea</option>
+                <option>kidneybeans</option>
+                <option>pigeonpeas</option>
+                <option>mothbeans</option>
+                <option>mungbean</option>
+                <option>blackgram</option>
+                <option>lentil</option>
+                <option>pomegranate</option>
+                <option>banana</option>
+                <option>mango</option>
+                <option>grapes</option>
+                <option>watermelon</option>
+                <option>muskmelon</option>
+                <option>apple</option>
+                <option>orange</option>
+                <option>papaya</option>
+                <option>coconut</option>
+                <option>cotton</option>
+                <option>jute</option>
+                <option>coffee</option>
+              </select>
+            </div>
+                </div>
+            </div>
+            <div class="form-group text-right">
+              <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+          </form>
+        </section>
+        </div>
+        <footer class=" bg-dark text-white pt-5 pb-4">
+          <div class="container text-center text-md ">
+              <h2><a href="{{ url_for('home') }}">Agro-Intelligent</a></h2>
+              <p>Crop Recommender - Fertilizer Advisor - Crop Yield Prediction<br> </p>
+              <p>&copy; Copyright 2021 HICET</p>
+          </div>
+      </footer>
+
+        </footer>
+    <!-- Bootstrap JS-->
+    <script src="{{ url_for('static', filename='css/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap.min.js') }}"></script>
+    
+    </body>
+</html>

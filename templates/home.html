@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta Tag-->
+        <meta charser="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS-->
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"  rel= "stylesheet"text='text/css'/>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+        
+        <!-- Title Tag-->
+        <title>Home Page</title>
+
+    </head>
+    <body>
+
+        <!--Header-->
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark  ">
+                <div class="container">
+                    <a href="{{ url_for('home') }}" class="nav-brand">Agro-Intelligent</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar"aria-controls="myNavBar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="myNavBar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                            </li>
+                            <li class ="nav-item">
+                                <a href="{{ url_for('crop_recommend') }}" class="nav-link">Crop Recommender</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer Advisor</a>
+                              </li>
+                            <li class="nav-item">
+                              <a href="{{url_for('crop_yield')}}" class="nav-link">Yield Predictor</a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="{{url_for('about')}}" class="nav-link">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Section -->
+        <section>
+            <div class="im">
+                <div class="container">
+                    <div class="imag text-center">
+                        <br>
+                        <h3 class="text-wh">Agro - Intelligent</h3><br>
+                        <h4 class="text-wh mx-auto my-4"><b>Crop Recommender - Fertilizer Advisor - Crop Yield Prediction</b></h4><br><br><br>
+                        <a class="btn btn-primary" href="#crop" role="button">Get Started</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="core-value py-5 border" id='crop'>
+            <div class="container py-md-4">
+                <div class="row core-grids">
+                    <div class="col-lg-5 core-left">
+                        <a href="{{ url_for('crop_recommend') }}">
+                        <img src="{{ url_for('static', filename='images/Recommender.jpg') }}" class="img-fluid" alt="" /><a/>
+                    </div>
+                    <div class="col-lg-7 core-right text-center">
+                        <h1 class="mt-4">Crop Recommender</h1>
+                        <p class="mt-5" id=imag>Crop Recommender is used to recommend the sowing crop based on the weather and soil parameters</p>
+                        <a class="btn btn-primary" href="{{ url_for('crop_recommend') }}" role="button">Crop Recommender</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="core-value py-5 border">
+            <div class="container py-md-4">
+                <div class="row core-grids">
+                    
+                    <div class="col-lg-7 core-left text-center">
+                        <h1 class="mt-4">Fertilizer Advisor</h1>
+                        <p class="mt-5" id='imag'>Fertilizer Advisor is used to advice how to use fertilizer based on the crop and soil parameters</p>
+                        <a class="btn btn-primary" href="{{ url_for('fertilizer_recommendation') }}" role="button">Fertilizer Advisor</a>
+                    </div>
+                    <div class="col-lg-5 core-right">
+                        <a href="{{url_for('fertilizer_recommendation')}}">
+                        <img src="{{ url_for('static', filename='images/Fertilizer.jpg') }}" class="img-fluid" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="core-value py-5 border">
+            <div class="container py-md-4">
+                <div class="row core-grids">
+                    <div class="col-lg-5 core-left">
+                        <a href="{{url_for('crop_yield')}}">
+                        <img src="{{ url_for('static', filename='images/Yield.jpg') }}" class="img-fluid" alt="" />
+                        </a>
+                    </div>
+           
+                    <div class="col-lg-7 core-right text-center">
+                        <h3 class="mt-4">Crop Yield Predictor</h3>
+                        <p class="mt-5" id='imag'>Crop Yield Prediction is used to predict the crop yield based on crop,weather and soil parameters</p>
+                        <a class="btn btn-primary" href="{{url_for('crop_yield')}}" role="button">Yield Predictor</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer class=" bg-dark text-white pt-5 pb-4">
+            <div class="container text-center text-md ">
+                <h2><a href="{{ url_for('home') }}">Agro-Intelligent</a></h2>
+                <p>Crop Recommender - Fertilizer Advisor - Crop Yield Prediction<br> </p>
+                <p>&copy; Copyright 2021 HICET</p>
+            </div>
+        </footer>
+
+        </footer>
+    <!-- Bootstrap JS-->
+    <script src="{{ url_for('static', filename='css/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>
